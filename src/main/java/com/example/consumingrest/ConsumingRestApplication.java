@@ -26,7 +26,7 @@ public class ConsumingRestApplication {
 
 	@Bean
 	@Profile("!test")
-	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
+	public CommandLineRunner run(RestTemplate restTemplate) {
 		return args -> {
 			String quote = restTemplate.getForObject(
 					"https://api.kanye.rest/", String.class);
